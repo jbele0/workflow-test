@@ -15,8 +15,8 @@ jobs:
 
       - name: Install Python dependencies  # 파이썬 종속성을 설치
         run: |
-          python —version, pip —version
-          python -m pip install --upgrade pip
+          python3 —version, pip —version
+          python3 -m pip install --upgrade pip
           # pip install -r requirements.txt
 
   
