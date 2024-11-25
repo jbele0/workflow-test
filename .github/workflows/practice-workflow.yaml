@@ -8,7 +8,7 @@ jobs:
       - name: Set up Python 
         uses: actions/setup-python@v2 # 워크플로우 환경에 Python을 설정
         with:
-          python-version: 3.x #파이썬 3버
+          python-version: 3.x #파이썬 3버전
 
       - name: Install system dependencies # 필요한 시스템 종속성을 설치 (build-essential과 libffi-dev 패키지를 설치)
         run: sudo apt-get update && sudo apt-get install -y build-essential libffi-dev
