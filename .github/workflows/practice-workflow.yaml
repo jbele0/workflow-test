@@ -1,22 +1,10 @@
-name: Validate Python e2e
-on: [push]
-
+name: practice-workflow
+on: [push, pull_request]
 jobs:
-  run-code:
-    runs-on: ubuntu-latest   # 최신버전 우분투에서 실행
+  check-python:
+    runs-on: ubuntu-latest
     steps:
-      - name: Set up Python 
-        uses: actions/setup-python@v2 # 워크플로우 환경에 Python을 설정
-        with:
-          python-version: 3.x #파이썬 3버전
-
-      - name: Install system dependencies # 필요한 시스템 종속성을 설치 (build-essential과 libffi-dev 패키지를 설치)
-        run: sudo apt-get update && sudo apt-get install -y build-essential libffi-dev
-
-      - name: Install Python dependencies  # 파이썬 종속성을 설치
-        run: |
-          python3 —-version, pip —-version
-          python3 -m pip install --upgrade pip
-          # pip install -r requirements.txt
-
-  
+      - name: Check Python Version
+        run: python --version
+      - name: Check pip version
+        run: pip --version
